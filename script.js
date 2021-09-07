@@ -126,6 +126,7 @@ btnTryAgain.addEventListener('click', () => {
 
 
 btnHigher.addEventListener('click', () => {
+    disableButton(btnHigher);
     if(data[RandomIndex2].follower_count >= data[RandomIndex].follower_count) {
         rightAnswer();
     }
@@ -136,6 +137,7 @@ btnHigher.addEventListener('click', () => {
 
 
 btnLower.addEventListener('click', () => {
+    disableButton(btnLower);
     if(data[RandomIndex2].follower_count <= data[RandomIndex].follower_count) {
         rightAnswer();
     }
@@ -144,7 +146,12 @@ btnLower.addEventListener('click', () => {
     }
 });
 
+// Disables buttons so user cannot spam it
 
+function disableButton(button) {
+    button.disabled = true;
+    setTimeout(function() {button.disabled = false;}, 2000);
+}
 
 // Returns random index inluding max
 
