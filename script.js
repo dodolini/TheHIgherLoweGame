@@ -48,16 +48,16 @@ function changeData(title, description, window, firstIndex, secondIndex) {
 }
 
 function FirstDataLoad () {
-    RandomIndex = getRandomIndex(0,3);
+    RandomIndex = getRandomIndex(0,55);
     
     changeData(leftName, leftDescription, leftWindow, RandomIndex, RandomIndex);
     rightSpan.textContent = data[RandomIndex].name;
 
-    RandomIndex2 = getRandomIndex(0,3);
+    RandomIndex2 = getRandomIndex(0,55);
 
     if(RandomIndex2===RandomIndex){
         while(RandomIndex2 === RandomIndex) {
-            RandomIndex2 = getRandomIndex(0,3);
+            RandomIndex2 = getRandomIndex(0,55);
         }
     }
     changeData(rightName, rightDescription, rightWindow, RandomIndex2, RandomIndex2);
@@ -81,11 +81,11 @@ function rightAnswer () {
         rightSpan.textContent = data[RandomIndex2].name;
 
 
-        RandomIndex2 = getRandomIndex(0,3);
+        RandomIndex2 = getRandomIndex(0,55);
 
         if(RandomIndex2===RandomIndex){
             while(RandomIndex2 === RandomIndex) {
-                RandomIndex2 = getRandomIndex(0,3);
+                RandomIndex2 = getRandomIndex(0,55);
             }
         }
          changeData(rightName, rightDescription, rightWindow, RandomIndex2, RandomIndex2);
