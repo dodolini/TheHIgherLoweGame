@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Higher Lower Game</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MENU -->
+    <div class="menu" id="menu">
+        <div class="menu-box">
+            <div class="logo-box">
+                <img src="logo.JPG" alt="Logo" class="logo">
+            </div>
+            <header class="header-box">
+                <h1 class="header">Who is more popular on Instagram?</h1>
+            </header>
+            
+            <p class="description">You have to make choice who is more popular on Instagram based on followers count!</p>
+
+            <div class="menu__btn-container">
+                <button class="btn-play">Let's Play!<i class="fas fa-play"></i></button>
+            </div>
+            <div class="author-box">
+                <p class="author">Created and designed by <span class="author-name">Dominik Neumann</span> &copy;</p>
+                     <div class="media-box">
+                         <a href="https://github.com/dodolini" class="media-item github" target="_blank"><i class="fab fa-github"></i></a>
+                         <a href="https://www.facebook.com/n1ckenn" class="media-item facebook" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                         <a href="https://pl.linkedin.com/" class="media-item linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME WINDOW -->
+    <div class="game-window" id="game-window">
+        <div class="left-window">
+            <div class="elements-container">
+                <p class="name-left item-left"></p>
+                <p class="description-left item-left"></p>
+            </div>
+            <div class="score-container">
+                <p class="score-info">Your score: <span class="score">0</span></p>
+            </div>
+        </div>
+        <div class="separator">
+            <div class="versus-sign">
+                <p class="vs">VS</p>
+            </div>
+            <div class="bad-answer">
+                <p class="bad-answer-sign"><i class="fas fa-times"></i></p>
+            </div>
+            <div class="good-answer">
+                <p class="good-answer-sign"><i class="fas fa-check"></i></p>
+            </div>
+        </div>
+        <div class="right-window">
+            <div class="elements-container">
+                <p class="name-right item-right"></p>
+                <p class="description-right item-right"></p>
+                <p class="has item-right">has</p>
+                <button class="higher item-right">Higher<i class="fas fa-arrow-up"></i></button>
+                <button class="lower item-right">Lower<i class="fas fa-arrow-down"></i></button>
+                <p class="ending item-right">instagram followers than <span class="first-user-name"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-screen" hidden>
+        <div class="popup">
+            <h1 class="popup-header">You lost!</h1>
+            <p class="your-score">Your final score is <span class="final-score">10 </span>!</p>
+            <button class="btn-try-again">Try again!</button>
+            <button class="btn-menu">Back to Menu</button>
+        </div>
+    </div>
+
+    
+
+<!-- Script -->
+<script src="https://kit.fontawesome.com/14d6b98f08.js" crossorigin="anonymous"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>  
+</body>
+</html>

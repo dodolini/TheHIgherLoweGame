@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: white;
+    font-family: Indie Flower;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* MENU */
+
+.menu {
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://images.freeimages.com/images/large-previews/ce9/white-background-1639851.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+    transition: .6s;
+    z-index: 2000;
+}
+
+.menu-box {
+    position: absolute;
+    height: 70%;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.logo-box {
+    width: 80%;
+    text-align: center;
+}
+
+
+.logo {
+    border-radius: .5rem;
+    border: 2px solid rgb(167, 164, 164);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .8);
+}
+
+.header-box {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .2rem;
+}
+
+.description {
+    font-size: 2.5rem;
+    display: inline;
+    width: 70%;
+    text-align: center;
+}
+
+.menu__btn-container {
+    text-align: center;
+    width: 80%;
+}
+
+.btn-play {
+    cursor: pointer;
+    outline: none;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    border: 2px solid black;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 20px 4px -19px rgba(255, 255, 255, 0.4), 0 12px 12px 0 rgba(0, 0, 0, 0.3);
+    transition: all .1s;
+    font-size: 2rem;
+    font-family: Indie Flower;
+    font-weight: 700;
+    color: rgb(10, 172, 5);
+}
+
+.btn-play:hover {
+    filter: brightness(.98);
+    transform: translateY(-3px);
+}
+
+
+.btn-play:active {
+    transform: translateY(3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fas {
+    margin-left: 3rem;
+    color: rgb(212, 13, 13);
+}
+
+.author-box {
+    width: 80%;
+    text-align: center;
+}
+
+.author {
+    font-size: 2rem;
+}
+
+.author-name {
+    font-weight: 700;
+}
+
+.media-item {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.fab {
+    transition: .2s;
+}
+
+.fab:hover {
+    transform: translateY(-3px);
+}
+
+.github {
+    color: black;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.linkedin {
+    color: #0e76a8;
+}
+
+.rolled-up {
+    transform: translateY(-100%);
+}
+
+/* MENU END */
+
+/* GAME WINDOW */
+
+.game-window {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    border: 1rem solid white;
+    border-radius: 4rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: .3s;
+}
+
+.left-window {
+    display: inline-block;
+    height: 100vh;
+    background-color: cadetblue;
+    width: 50%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)),
+        url(https://gamingsociety.pl/wp-content/uploads/2020/02/Vin-Diesel.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.right-window {
+    display: inline-block;
+    height: 100vh;
+    background-color: chocolate;
+    width: 50%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)),
+        url(https://ocdn.eu/pulscms-transforms/1/e5pk9kpTURBXy9mZTc3ZGEyOWY2YmMwYjFhZThkMTMxMjY1NGEwYTMyMS5qcGeTlQMAcc0EOM0CYJMJpjllYWFkZgaTBc0EsM0CdoGhMAE/cristiano-ronaldo-jest-szczesliwym-ojcem.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.separator {
+    height: 100vh;
+    width: 1.5%;
+    background-color: #fff;
+}
+
+.versus-sign {
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.vs {
+    line-height: 8rem;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.bad-answer {
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+    transition: .2s;
+}
+
+.fa-times {
+    line-height: 8rem;
+    font-size: 5rem;
+    margin: .5rem 0;
+    color: white;
+}
+
+.good-answer {
+    position: absolute;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    background-color: rgb(5, 170, 5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+    transition: .2s;
+}
+
+.fa-check {
+    line-height: 8rem;
+    font-size: 5rem;
+    margin: .5rem 0;
+    color: white;
+}
+
+
+
+.elements-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 80%;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-family: Permanent Marker;
+}
+
+.item-left {
+    color: white;
+    font-size: 4rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    padding: .5rem;
+    border-radius: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+.item-right {
+    color: white;
+    font-size: 4rem;
+    margin: 0;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    padding: .5rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.has {
+    font-size: 2rem;
+    font-family: Montserrat Alternates, sans-serif;
+}
+
+.higher,
+.lower {
+    display: block;
+    color: black;
+    margin: 1rem;
+    font-family: Montserrat Alternates, sans-serif;
+    font-weight: 700;
+    border: 4px solid white;
+    border-radius: 4rem;
+    padding: 2rem 2.5rem;
+    color: rgb(243, 187, 3);
+    background-color: transparent;
+    font-size: 2rem;
+    transition: all .2s;
+}
+
+.higher:hover,
+.lower:hover {
+    background-color: rgb(218, 165, 32);
+    color: white;
+    cursor: pointer;
+    border: 4px solid rgb(218, 165, 32);
+}
+
+.fa-arrow-up,
+.fa-arrow-down {
+    color: rgb(243, 187, 3);
+    transition: .2s;
+}
+
+.higher:hover .fa-arrow-up {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.lower:hover .fa-arrow-down {
+    color: white;
+    transform: translateY(5px);
+}
+
+.ending {
+    text-align: center;
+    font-size: 2rem;
+    font-family: Montserrat Alternates, sans-serif;
+}
+
+.score-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 2rem 4rem;
+}
+
+.score-info {
+    font-size: 4rem;
+    color: white;
+    margin: 0;
+    text-shadow: 1px 3px .1rem rgba(0, 0, 0, 0.8);
+}
+
+/* GAME WINDOW END */
+
+/* POPUP */
+
+.popup-screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 3000;
+}
+
+.popup {
+    height: 60%;
+    width: 60vw;
+    background-color: rgb(240, 146, 146);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup-header {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    margin-top: 7rem;
+    color: white;
+}
+
+.your-score {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.final-score {
+    font-size: 4rem;
+}
+
+.btn-try-again,
+.btn-menu {
+    margin: 2rem;
+    display: block;
+    width: 20rem;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: Montserrat Alternates;
+    border-radius: .5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    color: rgb(219, 110, 110);
+    transition: .3s;
+}
+
+.btn-try-again:hover,
+.btn-menu:hover {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.popupIn {
+    animation: popupSlideIn 1s;
+}
+
+/* Animations */
+@keyframes popupSlideIn {
+    0% {
+        transform: translate(-50%, 100%);
+    }
+
+    80% {
+        transform: translate(-50%, -60%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Media Query */
+
+@media screen and (max-width: 900px) {
+    .logo {
+        transform: scale(.8);
+        margin-top: 1.5rem;
+    }
+
+    .menu-box {
+        height: 85%;
+    }
+
+    html {
+        font-size: 58%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 38%;
+    }
+}
