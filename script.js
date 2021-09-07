@@ -48,16 +48,16 @@ function changeData(title, description, window, firstIndex, secondIndex) {
 }
 
 function FirstDataLoad () {
-    RandomIndex = getRandomIndex(0,55);
+    RandomIndex = getRandomIndex(0,3);
     
     changeData(leftName, leftDescription, leftWindow, RandomIndex, RandomIndex);
     rightSpan.textContent = data[RandomIndex].name;
 
-    RandomIndex2 = getRandomIndex(0,55);
+    RandomIndex2 = getRandomIndex(0,3);
 
     if(RandomIndex2===RandomIndex){
         while(RandomIndex2 === RandomIndex) {
-            RandomIndex2 = getRandomIndex(0,55);
+            RandomIndex2 = getRandomIndex(0,3);
         }
     }
     changeData(rightName, rightDescription, rightWindow, RandomIndex2, RandomIndex2);
@@ -65,28 +65,6 @@ function FirstDataLoad () {
 
 FirstDataLoad();
 scoreSpan.textContent = score;
-
-//BUTTONS CHECKING IF ANSWER IS CORRECT
-
-
-btnHigher.addEventListener('click', () => {
-    if(data[RandomIndex2].follower_count >= data[RandomIndex].follower_count) {
-        rightAnswer();
-    }
-    else {
-        badAnswer();
-    }
-});
-
-
-btnLower.addEventListener('click', () => {
-    if(data[RandomIndex2].follower_count <= data[RandomIndex].follower_count) {
-        rightAnswer();
-    }
-    else {
-        badAnswer();
-    }
-});
 
 // This is what starts when the answer is correct
 
@@ -97,21 +75,17 @@ function rightAnswer () {
     setTimeout(function (){ goodSign.style.transform = "translate(-50%, -50%) scale(0)";}, 2000);
 
     setTimeout(function () {
-
-        //Switching Data
-        data[RandomIndex].name = data[RandomIndex2].name;
-        data[RandomIndex].description = data[RandomIndex2].description;
-        data[RandomIndex].follower_count = data[RandomIndex2].follower_count;
+        RandomIndex=RandomIndex2;
 
         changeData(leftName, leftDescription, leftWindow, RandomIndex, RandomIndex2);
         rightSpan.textContent = data[RandomIndex2].name;
 
 
-        RandomIndex2 = getRandomIndex(0,55);
+        RandomIndex2 = getRandomIndex(0,3);
 
         if(RandomIndex2===RandomIndex){
             while(RandomIndex2 === RandomIndex) {
-                RandomIndex2 = getRandomIndex(0,55);
+                RandomIndex2 = getRandomIndex(0,3);
             }
         }
          changeData(rightName, rightDescription, rightWindow, RandomIndex2, RandomIndex2);
@@ -147,6 +121,29 @@ btnTryAgain.addEventListener('click', () => {
     FirstDataLoad();
     scoreSpan.textContent = "0";
 });
+
+//BUTTONS CHECKING IF ANSWER IS CORRECT
+
+
+btnHigher.addEventListener('click', () => {
+    if(data[RandomIndex2].follower_count >= data[RandomIndex].follower_count) {
+        rightAnswer();
+    }
+    else {
+        badAnswer();
+    }
+});
+
+
+btnLower.addEventListener('click', () => {
+    if(data[RandomIndex2].follower_count <= data[RandomIndex].follower_count) {
+        rightAnswer();
+    }
+    else {
+        badAnswer();
+    }
+});
+
 
 
 // Returns random index inluding max
